@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0E7AF0E-3612-4DC0-B50C-91E2AA32F7D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project_12_A_B</RootNamespace>
+    <AssemblyName>Project_12_A_B</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.5.6284.35475, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.5.6284.35475\lib\net35-client\CircularProgressBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.6.8.0\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ShellProgressBar, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShellProgressBar.3.0.0.0\lib\NET4\ShellProgressBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.5.6298.3372, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.5.6298.3372\lib\net35-client\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\Lesson.cs" />
+    <Compile Include="Classes\Secretary.cs" />
+    <Compile Include="Classes\Student.cs" />
+    <Compile Include="Classes\Technican.cs" />
+    <Compile Include="CodeLayer\Classroom.cs" />
+    <Compile Include="CodeLayer\Cls_Login.cs" />
+    <Compile Include="CodeLayer\Constraint.cs" />
+    <Compile Include="CodeLayer\Course.cs" />
+    <Compile Include="CodeLayer\Employee.cs" />
+    <Compile Include="CodeLayer\Handler.cs" />
+    <Compile Include="CodeLayer\Lecturer.cs" />
+    <Compile Include="CodeLayer\Lesson.cs" />
+    <Compile Include="CodeLayer\Person.cs" />
+    <Compile Include="CodeLayer\Student.cs" />
+    <Compile Include="DAL\DataBase.cs" />
+    <Compile Include="facebook\Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\Analyze.designer.cs">
+      <DependentUpon>Analyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="facebook\FacebookLoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\FacebookLoginDialog.designer.cs">
+      <DependentUpon>FacebookLoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="facebook\FB_Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebook\FB_Analyze.designer.cs">
+      <DependentUpon>FB_Analyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="facebook\MiniJson.cs" />
+    <Compile Include="Forms\Admin\AddAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AddAnnouncement.Designer.cs">
+      <DependentUpon>AddAnnouncement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Permissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Permissions.Designer.cs">
+      <DependentUpon>Permissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\TechnicalReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\TechnicalReq.Designer.cs">
+      <DependentUpon>TechnicalReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Secretary\AddCourseToStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secretary\AddCourseToStudent.designer.cs">
+      <DependentUpon>AddCourseToStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Secretary\EditStudentInfoSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secretary\EditStudentInfoSec.Designer.cs">
+      <DependentUpon>EditStudentInfoSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Secretary\EditStudentSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secretary\EditStudentSchedule.designer.cs">
+      <DependentUpon>EditStudentSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Secretary\RemoveStudentCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secretary\RemoveStudentCourses.Designer.cs">
+      <DependentUpon>RemoveStudentCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Secretary\RequestTechSup_Secretary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secretary\RequestTechSup_Secretary.Designer.cs">
+      <DependentUpon>RequestTechSup_Secretary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Secretary\SearchForStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secretary\SearchForStudent.Designer.cs">
+      <DependentUpon>SearchForStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Secretary\Secretary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secretary\Secretary.Designer.cs">
+      <DependentUpon>Secretary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\Announcements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\Announcements.Designer.cs">
+      <DependentUpon>Announcements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\CourseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\CourseDetails.Designer.cs">
+      <DependentUpon>CourseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\YouTube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\YouTube.Designer.cs">
+      <DependentUpon>YouTube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\PersonalInfoStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\PersonalInfoStudent.Designer.cs">
+      <DependentUpon>PersonalInfoStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\RegisterToCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\RegisterToCourse.Designer.cs">
+      <DependentUpon>RegisterToCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\Requests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\Requests.Designer.cs">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\Schedule.Designer.cs">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\SearchCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\SearchCourse.Designer.cs">
+      <DependentUpon>SearchCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\Student.Designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\StudentPortalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\StudentPortalForm.Designer.cs">
+      <DependentUpon>StudentPortalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Technican\Technical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Technican\Technical.Designer.cs">
+      <DependentUpon>Technical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Technican\TechnicalRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Technican\TechnicalRequests.Designer.cs">
+      <DependentUpon>TechnicalRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Technican\TechnicalRequestsTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Technican\TechnicalRequestsTable.Designer.cs">
+      <DependentUpon>TechnicalRequestsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Global.cs" />
+    <Compile Include="Global\Users.cs" />
+    <Compile Include="PL\AddLecturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AddLecturerForm.designer.cs">
+      <DependentUpon>AddLecturerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AddStudent.designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AssignStudent_To_Course.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AssignStudent_To_Course.Designer.cs">
+      <DependentUpon>AssignStudent_To_Course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DeleteStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DeleteStudent.designer.cs">
+      <DependentUpon>DeleteStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DirectOfStud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DirectOfStud.designer.cs">
+      <DependentUpon>DirectOfStud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormClasses.Designer.cs">
+      <DependentUpon>FormClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormClassroomDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormClassroomDetails.Designer.cs">
+      <DependentUpon>FormClassroomDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormConstraints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormConstraints.Designer.cs">
+      <DependentUpon>FormConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormCourses.Designer.cs">
+      <DependentUpon>FormCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormEditClassroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormEditClassroom.Designer.cs">
+      <DependentUpon>FormEditClassroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormLecturerConstraint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormLecturerConstraint.Designer.cs">
+      <DependentUpon>FormLecturerConstraint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormLecturers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormLecturers.Designer.cs">
+      <DependentUpon>FormLecturers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormStudents.Designer.cs">
+      <DependentUpon>FormStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormUpdateCourseBySecretary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormUpdateCourseBySecretary.Designer.cs">
+      <DependentUpon>FormUpdateCourseBySecretary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormUpdateLecturerBySelf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormUpdateLecturerBySelf.designer.cs">
+      <DependentUpon>FormUpdateLecturerBySelf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FormViewLecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FormViewLecturer.designer.cs">
+      <DependentUpon>FormViewLecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmAddClassroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmAddClassroom.Designer.cs">
+      <DependentUpon>FrmAddClassroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmAddCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmAddCourses.designer.cs">
+      <DependentUpon>FrmAddCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmAddLesson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmAddLesson.Designer.cs">
+      <DependentUpon>FrmAddLesson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmDelClassroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmDelClassroom.Designer.cs">
+      <DependentUpon>FrmDelClassroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmDeleteCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmDeleteCourses.designer.cs">
+      <DependentUpon>FrmDeleteCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmDeleteLecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmDeleteLecturer.designer.cs">
+      <DependentUpon>FrmDeleteLecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmDeleteLesson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmDeleteLesson.Designer.cs">
+      <DependentUpon>FrmDeleteLesson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmEditLesson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmEditLesson.Designer.cs">
+      <DependentUpon>FrmEditLesson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmLecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmLecturer.designer.cs">
+      <DependentUpon>FrmLecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmLessons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmLessons.Designer.cs">
+      <DependentUpon>FrmLessons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmSecretary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmSecretary.designer.cs">
+      <DependentUpon>FrmSecretary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmStudentRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmStudentRequest.Designer.cs">
+      <DependentUpon>FrmStudentRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmViewSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrmViewSchedule.Designer.cs">
+      <DependentUpon>FrmViewSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Login\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Login\Modules\FadeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\Login\Modules\ModuleForgot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\Login\Modules\ModuleForgot.Designer.cs">
+      <DependentUpon>ModuleForgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Login\Modules\ModuleLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\Login\Modules\ModuleLogin.Designer.cs">
+      <DependentUpon>ModuleLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\StudentSectionDirect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\StudentSectionDirect.Designer.cs">
+      <DependentUpon>StudentSectionDirect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\StudentSectionSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\StudentSectionSec.Designer.cs">
+      <DependentUpon>StudentSectionSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SystemUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SystemUsers.Designer.cs">
+      <DependentUpon>SystemUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\UpdateLecturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\UpdateLecturerForm.designer.cs">
+      <DependentUpon>UpdateLecturerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\updateLesson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\updateLesson.Designer.cs">
+      <DependentUpon>updateLesson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\UpdateStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\UpdateStudentInfo.Designer.cs">
+      <DependentUpon>UpdateStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectSCEDataSet.Designer.cs">
+      <DependentUpon>ProjectSCEDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ProjectSCEDataSet1.Designer.cs">
+      <DependentUpon>ProjectSCEDataSet1.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ProjectSCEDataSet2.Designer.cs">
+      <DependentUpon>ProjectSCEDataSet2.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ProjectSCEDataSet3.Designer.cs">
+      <DependentUpon>ProjectSCEDataSet3.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ProjectSCEDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectSCEDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaitingForm\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingForm\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="facebook\Analyze.resx">
+      <DependentUpon>Analyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="facebook\FacebookLoginDialog.resx">
+      <DependentUpon>FacebookLoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="facebook\FB_Analyze.resx">
+      <DependentUpon>FB_Analyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AddAnnouncement.resx">
+      <DependentUpon>AddAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Permissions.resx">
+      <DependentUpon>Permissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\TechnicalReq.resx">
+      <DependentUpon>TechnicalReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secretary\AddCourseToStudent.resx">
+      <DependentUpon>AddCourseToStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secretary\EditStudentInfoSec.resx">
+      <DependentUpon>EditStudentInfoSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secretary\EditStudentSchedule.resx">
+      <DependentUpon>EditStudentSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secretary\RemoveStudentCourses.resx">
+      <DependentUpon>RemoveStudentCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secretary\RequestTechSup_Secretary.resx">
+      <DependentUpon>RequestTechSup_Secretary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secretary\SearchForStudent.resx">
+      <DependentUpon>SearchForStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secretary\Secretary.resx">
+      <DependentUpon>Secretary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\Announcements.resx">
+      <DependentUpon>Announcements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\CourseDetails.resx">
+      <DependentUpon>CourseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\PersonalInfoStudent.resx">
+      <DependentUpon>PersonalInfoStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\RegisterToCourse.resx">
+      <DependentUpon>RegisterToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\Requests.resx">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\SearchCourse.resx">
+      <DependentUpon>SearchCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\Student.resx">
+      <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\StudentPortalForm.resx">
+      <DependentUpon>StudentPortalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\YouTube.resx">
+      <DependentUpon>YouTube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Technican\Technical.resx">
+      <DependentUpon>Technical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Technican\TechnicalRequests.resx">
+      <DependentUpon>TechnicalRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Technican\TechnicalRequestsTable.resx">
+      <DependentUpon>TechnicalRequestsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddLecturerForm.he-IL.resx">
+      <DependentUpon>AddLecturerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddLecturerForm.resx">
+      <DependentUpon>AddLecturerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AssignStudent_To_Course.resx">
+      <DependentUpon>AssignStudent_To_Course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DeleteStudent.resx">
+      <DependentUpon>DeleteStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DirectOfStud.resx">
+      <DependentUpon>DirectOfStud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormClasses.resx">
+      <DependentUpon>FormClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormClassroomDetails.resx">
+      <DependentUpon>FormClassroomDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormConstraints.resx">
+      <DependentUpon>FormConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormCourses.resx">
+      <DependentUpon>FormCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormEditClassroom.resx">
+      <DependentUpon>FormEditClassroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormLecturerConstraint.resx">
+      <DependentUpon>FormLecturerConstraint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormLecturers.resx">
+      <DependentUpon>FormLecturers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormStudents.resx">
+      <DependentUpon>FormStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormUpdateCourseBySecretary.resx">
+      <DependentUpon>FormUpdateCourseBySecretary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormUpdateLecturerBySelf.he-IL.resx">
+      <DependentUpon>FormUpdateLecturerBySelf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormUpdateLecturerBySelf.resx">
+      <DependentUpon>FormUpdateLecturerBySelf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormViewLecturer.he-IL.resx">
+      <DependentUpon>FormViewLecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FormViewLecturer.resx">
+      <DependentUpon>FormViewLecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmAddClassroom.resx">
+      <DependentUpon>FrmAddClassroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmAddCourses.resx">
+      <DependentUpon>FrmAddCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmAddLesson.resx">
+      <DependentUpon>FrmAddLesson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmDelClassroom.resx">
+      <DependentUpon>FrmDelClassroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmDeleteCourses.resx">
+      <DependentUpon>FrmDeleteCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmDeleteLecturer.resx">
+      <DependentUpon>FrmDeleteLecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmDeleteLesson.resx">
+      <DependentUpon>FrmDeleteLesson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmEditLesson.resx">
+      <DependentUpon>FrmEditLesson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmLecturer.resx">
+      <DependentUpon>FrmLecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmLessons.resx">
+      <DependentUpon>FrmLessons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmSecretary.resx">
+      <DependentUpon>FrmSecretary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmStudentRequest.resx">
+      <DependentUpon>FrmStudentRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrmViewSchedule.resx">
+      <DependentUpon>FrmViewSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Login\Modules\FadeControl.resx">
+      <DependentUpon>FadeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Login\Modules\ModuleForgot.resx">
+      <DependentUpon>ModuleForgot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Login\Modules\ModuleLogin.resx">
+      <DependentUpon>ModuleLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\StudentSectionDirect.resx">
+      <DependentUpon>StudentSectionDirect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\StudentSectionSec.resx">
+      <DependentUpon>StudentSectionSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SystemUsers.resx">
+      <DependentUpon>SystemUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UpdateLecturerForm.he-IL.resx">
+      <DependentUpon>UpdateLecturerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UpdateLecturerForm.resx">
+      <DependentUpon>UpdateLecturerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\updateLesson.resx">
+      <DependentUpon>updateLesson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UpdateStudentInfo.resx">
+      <DependentUpon>UpdateStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WaitingForm\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".nuget\NuGet.Config" />
+    <None Include=".nuget\NuGet.targets" />
+    <None Include="packages.config" />
+    <None Include="ProjectSCEDataSet.xsc">
+      <DependentUpon>ProjectSCEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectSCEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectSCEDataSet.xss">
+      <DependentUpon>ProjectSCEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet1.xsc">
+      <DependentUpon>ProjectSCEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectSCEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectSCEDataSet1.xss">
+      <DependentUpon>ProjectSCEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet2.xsc">
+      <DependentUpon>ProjectSCEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectSCEDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectSCEDataSet2.xss">
+      <DependentUpon>ProjectSCEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet3.xsc">
+      <DependentUpon>ProjectSCEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectSCEDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectSCEDataSet3.xss">
+      <DependentUpon>ProjectSCEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet4.xsc">
+      <DependentUpon>ProjectSCEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSCEDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectSCEDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectSCEDataSet4.xss">
+      <DependentUpon>ProjectSCEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YouTubeIcon1.png" />
+    <None Include="Resources\YouTubeIcon.png" />
+    <None Include="Resources\youtube.png" />
+    <None Include="Resources\User-icon.png" />
+    <None Include="Resources\url.png" />
+    <None Include="Resources\speech-bubble.png" />
+    <None Include="Resources\speech-bubble %281%29.png" />
+    <None Include="Resources\Settings-502.png" />
+    <None Include="Resources\Settings-501.png" />
+    <None Include="Resources\Settings-50.png" />
+    <None Include="Resources\settings3.png" />
+    <None Include="Resources\settings2.png" />
+    <None Include="Resources\settings1.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\SendTechnicalReq.jpg" />
+    <None Include="Resources\sce-279.jpg" />
+    <None Include="Resources\profilesettings.png" />
+    <None Include="Resources\profilepic.jpg" />
+    <None Include="Resources\profileofstudent.png" />
+    <None Include="Resources\previous.png" />
+    <None Include="Resources\Permissions.jpg" />
+    <None Include="Resources\Online-courses.jpg" />
+    <None Include="Resources\ok-mark.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\msgs.png" />
+    <None Include="Resources\megaphone.png" />
+    <None Include="Resources\mail1.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\logout5.png" />
+    <None Include="Resources\logout4.png" />
+    <None Include="Resources\logout3.png" />
+    <None Include="Resources\logout2.png" />
+    <None Include="Resources\logout1.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\login_img1.gif" />
+    <None Include="Resources\Login.jpg" />
+    <None Include="Resources\facebook.png" />
+    <None Include="Resources\envelope.png" />
+    <None Include="Resources\envelope %281%29.png" />
+    <None Include="Resources\demostration2.png" />
+    <None Include="Resources\demostration1.png" />
+    <None Include="Resources\demostration.png" />
+    <None Include="Resources\delete64.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\courses_offered.jpg" />
+    <None Include="Resources\courses.jpg" />
+    <None Include="Resources\courseimage.jpeg" />
+    <None Include="Resources\coursed1.jpg" />
+    <None Include="Resources\ChangePassword.png" />
+    <None Include="Resources\calendar %281%291.png" />
+    <None Include="Resources\calendar %281%29.png" />
+    <None Include="Resources\c31.png" />
+    <None Include="Resources\c21.png" />
+    <None Include="Resources\c3.png" />
+    <None Include="Resources\c2.png" />
+    <None Include="Resources\background-pattern-design-652.jpg" />
+    <None Include="Resources\background-pattern-design-651.jpg" />
+    <None Include="Resources\background-pattern-design-65.jpg" />
+    <None Include="Resources\attendance_list_icon.png" />
+    <None Include="Resources\AP602003664429-800x0-c-default.jpg" />
+    <None Include="Resources\announcement.png" />
+    <None Include="Resources\2ujl5cl.png" />
+    <None Include="Resources\white-background-gold-button-hi.png" />
+    <None Include="Resources\user_icon11.png" />
+    <None Include="Resources\user_icon1.png" />
+    <None Include="Resources\user_icon.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\SCE_logo.png" />
+    <None Include="Resources\password_icon1.png" />
+    <None Include="Resources\password_icon.png" />
+    <None Include="Resources\green-design-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".nuget\NuGet.exe" />
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\task-manager1.png" />
+    <None Include="Resources\15417203-exit-icon.jpg" />
+    <None Include="Resources\worker.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\images5.jpg" />
+    <None Include="Resources\Permissions1.jpg" />
+    <None Include="Resources\stats.png" />
+    <None Include="Resources\logout6.png" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\log.png" />
+    <None Include="Resources\fsf.png" />
+    <None Include="Resources\multiple-users-silhouette.png" />
+    <None Include="Resources\users.png" />
+    <None Include="Resources\annred.png" />
+    <None Include="Resources\ann.png" />
+    <None Include="Resources\facebook1.png" />
+    <None Include="Resources\facebook-sign-in-button-hover.png" />
+    <None Include="Resources\facebook-sign-in-button1.png" />
+    <None Include="Resources\facebook-sign-in-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
